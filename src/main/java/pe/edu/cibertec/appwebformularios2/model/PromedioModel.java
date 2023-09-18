@@ -8,8 +8,8 @@ import lombok.Setter;
 @Getter @Setter @NoArgsConstructor
 @AllArgsConstructor
 public class PromedioModel {
-    private Integer cl1;
-    private Integer cl2;
-    private Integer cl3;
-    private Integer profin;
+    private Integer CL1;
+    private Integer CL2;
+    private Integer CL3;
+    private Integer SP;
 }
