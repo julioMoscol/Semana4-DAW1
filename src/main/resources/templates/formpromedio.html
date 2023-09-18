@@ -15,39 +15,27 @@
         Cálculo de Promedio - Cibertec
     </div>
     <div class="card-body">
-        <form th:action="@{/promedionotas}" method="post"
-                th:object="${promediomodel}">
+        <form th:action="@{/CalcularPromedioNotas}" method="post"
+                th:object="${promedioModel}">
             <div class="form-floating mb-3">
-                <input type="number" class="form-control"
-                       id="txtcl1"
-                       placeholder="name@example.com"
-                        th:field="*{cl1}">
-                <label for="txtcl1">Ingrese nota del CL1</label>
+                <input type="number" class="form-control" id="txtCL1" placeholder="name@example.com" th:field="*{CL1}">
+                <label for="txtCL1">Ingrese nota del CL1</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="number" class="form-control"
-                       id="txtcl2"
-                       placeholder="name@example.com"
-                       th:field="*{cl2}">
-                <label for="txtcl2">Ingrese nota del CL2</label>
+                <input type="number" class="form-control" id="txtCL2" placeholder="name@example.com" th:field="*{CL2}">
+                <label for="txtCL2">Ingrese nota del CL2</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="number" class="form-control"
-                       id="txtcl3"
-                       placeholder="name@example.com"
-                       th:field="*{cl3}">
-                <label for="txtcl3">Ingrese nota del CL3</label>
+                <input type="number" class="form-control" id="txtCL3" placeholder="name@example.com" th:field="*{CL3}">
+                <label for="txtCL3">Ingrese nota del CL3</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="number" class="form-control"
-                       id="txtprofin"
-                       placeholder="name@example.com"
-                       th:field="*{profin}">
-                <label for="txtprofin">Ingrese nota de la Sustentación de Proyecto</label>
+                <input type="number" class="form-control" id="txtSP" placeholder="name@example.com" th:field="*{SP}">
+                <label for="txtSP">Ingrese nota de la Sustentación de Proyecto</label>
             </div>
             <button type="submit" class="btn btn-dark">CALCULAR PROMEDIO</button>
             <hr />
-            <div th:if="${verresultado}" class="alert alert-primary" role="alert">
+            <div th:if="${verResultado}" class="alert alert-primary" role="alert">
                 <span th:text="${resultado} ?: ''"></span>
             </div>
         </form>
