@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Calcular IMC</title>
+    <link th:href="@{/styles/bootstrap/bootstrap.css}"
+          rel="stylesheet">
+    <script th:src="@{/scripts/bootstrap/bootstrap.bundle.js}"
+            type="text/javascript"></script>
 </head>
 <body>
-
+    <div class="card">
+        <div class="card-header">
+            Cálculo de IMC - Cibertec
+        </div>
+        <div class="card-body">
+            <form th:action="@{/CalcularIMC}" method="post"
+                  th:object="${imcModel}">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="txtTalla" placeholder="name@example.com" th:field="*{talla}">
+                    <label for="txtTalla">Ingrese Talla</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="txtPeso" placeholder="name@example.com" th:field="*{peso}">
+                    <label for="txtPeso">Ingrese Peso</label>
+                </div>
+                <button type="submit" class="btn btn-dark">CALCULAR IMC</button>
+                <hr />
+                <div th:if="${verResultado}" class="alert" th:classappend="${colorAlert}" role="alert">
+                    <span th:text="${resultado} ?: ''"></span>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

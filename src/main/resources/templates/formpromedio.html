@@ -9,38 +9,36 @@
             type="text/javascript"></script>
 </head>
 <body>
-
-<div class="card">
-    <div class="card-header">
-        Cálculo de Promedio - Cibertec
+    <div class="card">
+        <div class="card-header">
+            Cálculo de Promedio - Cibertec
+        </div>
+        <div class="card-body">
+            <form th:action="@{/CalcularPromedioNotas}" method="post"
+                    th:object="${promedioModel}">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="txtCL1" placeholder="name@example.com" th:field="*{CL1}">
+                    <label for="txtCL1">Ingrese nota del CL1</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="txtCL2" placeholder="name@example.com" th:field="*{CL2}">
+                    <label for="txtCL2">Ingrese nota del CL2</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="txtCL3" placeholder="name@example.com" th:field="*{CL3}">
+                    <label for="txtCL3">Ingrese nota del CL3</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="txtSP" placeholder="name@example.com" th:field="*{SP}">
+                    <label for="txtSP">Ingrese nota de la Sustentación de Proyecto</label>
+                </div>
+                <button type="submit" class="btn btn-dark">CALCULAR PROMEDIO</button>
+                <hr />
+                <div th:if="${verResultado}" class="alert alert-primary" role="alert">
+                    <span th:text="${resultado} ?: ''"></span>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="card-body">
-        <form th:action="@{/CalcularPromedioNotas}" method="post"
-                th:object="${promedioModel}">
-            <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="txtCL1" placeholder="name@example.com" th:field="*{CL1}">
-                <label for="txtCL1">Ingrese nota del CL1</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="txtCL2" placeholder="name@example.com" th:field="*{CL2}">
-                <label for="txtCL2">Ingrese nota del CL2</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="txtCL3" placeholder="name@example.com" th:field="*{CL3}">
-                <label for="txtCL3">Ingrese nota del CL3</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="txtSP" placeholder="name@example.com" th:field="*{SP}">
-                <label for="txtSP">Ingrese nota de la Sustentación de Proyecto</label>
-            </div>
-            <button type="submit" class="btn btn-dark">CALCULAR PROMEDIO</button>
-            <hr />
-            <div th:if="${verResultado}" class="alert alert-primary" role="alert">
-                <span th:text="${resultado} ?: ''"></span>
-            </div>
-        </form>
-    </div>
-</div>
-
 </body>
 </html>
